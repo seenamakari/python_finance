@@ -18,7 +18,7 @@ simple_return_2022_07_01 = df.loc['2022-07-01']
 print(simple_return_2022_07_01)
 
 #Answer for c
-simple_return_2023_03_28 = df.loc['2023_03_28']
+simple_return_2023_03_28 = df.loc['2023-03-28']
 print(simple_return_2023_03_28)
 
 
