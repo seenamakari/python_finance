@@ -1,6 +1,6 @@
 import pandas as pd
 
-# Change dataset into a DataFrame
+# Changed dataset into a DataFrame
 df = pd.read_csv('WE.csv')
 
 # Set the date column as the index
@@ -31,6 +31,50 @@ print(data_2022_06_23)
 #1.1.1.e What is the gross return on Jul 01, 2022?
 data_2022_07_01 = df.loc['2022-07-01']
 print(data_2022_07_01)
+
+#1.1.2.a What is the 60-day simple return on Oct 18, 2022?
+simple_2022_10_18 = df.loc['2022-10-18', 'Open']
+print(x)
+
+
+#1.1.2.b How about 60-day gross return on Oct 18, 2022?
+
+
+
+#1.1.2.c What is the simple return for holding WE for the one year period (April 1, 2022 – March 31, 2023)?
+
+
+
+#1.1.3 Suppose you have let the returns on WE compound daily over the one-year period (April 1, 2022 – March 31, 2023). 
+#What is the annual log return for WE?
+
+
+
+
+#1.1.4.a - Table with daily simple returns
+print(df)
+
+
+
+#1.1.4.b - Table with daily log returns
+
+
+
+
+#1.1.4.c - Table with annualized daily simple returns
+
+
+
+
+#1.1.4.d - Table with annualized daily log returns 
+
+
+
+
+
+
+
+
 
 
 
