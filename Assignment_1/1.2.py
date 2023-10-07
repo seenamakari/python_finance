@@ -2,7 +2,15 @@ import pandas as pd
 
 # Changed dataset into a DataFrame
 df = pd.read_csv('AAPL.csv')
-print(df)
+
+# Set the date column as the index
+df.set_index('Date', inplace=True)
+
+#Adding the column for simple daily returns
+df['simple_daily_return'] = (df['Close'] / df['Open'] - 1)
+
+#Adding the column for gross daily returns
+df['gross_daily_return'] = 1 + df['simple_daily_return']
 
 #1.2.1 Simple returns (data: daily frequency)
 #a. What is the simple return on May 06, 2022?

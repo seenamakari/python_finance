@@ -10,7 +10,7 @@ df.set_index('Date', inplace=True)
 df['simple_daily_return'] = (df['Close'] / df['Open'] - 1)
 
 #Adding the column for gross daily returns
-df['gross_daily_return'] = 1 - (df['Close'] / df['Open'])
+df['gross_daily_return'] = 1 + df['simple_daily_return']
 
 # 1.1.1.a What is the simple return on Jun 23, 2022?
 data_2022_06_23 = df.loc['2022-06-23']
