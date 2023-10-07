@@ -10,7 +10,7 @@ df.set_index('Date', inplace=True)
 df['simple_daily_return'] = (df['Close'] / df['Open'] - 1)
 
 #Adding the column for gross daily returns
-df['gross_daily_return'] = (df['Close'] / df['Open'] + 1)
+df['gross_daily_return'] = 1 - (df['Close'] / df['Open'])
 
 # 1.1.1.a What is the simple return on Jun 23, 2022?
 data_2022_06_23 = df.loc['2022-06-23']
@@ -33,11 +33,13 @@ data_2022_07_01 = df.loc['2022-07-01']
 print(data_2022_07_01)
 
 #1.1.2.a What is the 60-day simple return on Oct 18, 2022?
-simple_2022_10_18 = df.loc['2022-10-18', 'Open']
-print(x)
+target_date = pd.Timestamp('2022-10-18')
+date_60_days_before = target_date - pd.Timedelta(days=60)
+
 
 
 #1.1.2.b How about 60-day gross return on Oct 18, 2022?
+
 
 
 
