@@ -7,28 +7,30 @@ df = pd.read_csv('AAPL.csv')
 df.set_index('Date', inplace=True)
 
 #Adding the column for simple daily returns
-df['simple_daily_return'] = (df['Close'] / df['Open'] - 1)
+df['simple_daily_return'] = (df['Close'] / df['Open']) - 1
 
 #Adding the column for gross daily returns
 df['gross_daily_return'] = 1 + df['simple_daily_return']
 
-#1.2.1 Simple returns (data: daily frequency)
-#a. What is the simple return on May 06, 2022?
+# 1.1.1.a What is the simple return on May 06, 2022?
+data_2022_05_06 = df.loc['2022-05-06']
+print(data_2022_05_06)
 
+#1.1.1.b What the simple return on Aug 05, 2022?
+data_2022_08_05 = df.loc['2022-08-05']
+print(data_2022_08_01)
 
-#b. What is the simple return on Aug 05, 2022?
+#1.1.1.c What about Jan 03, 2023??
+data_2023_01_03 = df.loc['2023-01-03']
+print(data_2023_01_03)
 
+#1.1.1.d What is the gross return on May 06, 2022?
+data_2022_05_06 = df.loc['2022-05-06']
+print(data_2022_05_06)
 
-
-#c. What about Jan 03, 2023?
-
-
-
-#d. What is the gross return on May 06, 2022?
-
-
-
-#e. What is the gross return on Aug 05, 2022?
+#1.1.1.e What is the gross return on Aug 05, 2022?
+data_2022_08_05 = df.loc['2022-08-05']
+print(data_2022_08_05)
 
 
 
