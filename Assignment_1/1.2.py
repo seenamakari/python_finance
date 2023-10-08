@@ -18,7 +18,7 @@ print(data_2022_05_06)
 
 #1.1.1.b What the simple return on Aug 05, 2022?
 data_2022_08_05 = df.loc['2022-08-05']
-print(data_2022_08_01)
+print(data_2022_08_05)
 
 #1.1.1.c What about Jan 03, 2023??
 data_2023_01_03 = df.loc['2023-01-03']
@@ -37,8 +37,10 @@ print(data_2022_08_05)
 #1.2.2 Log returns (data: monthly frequency)
 #a. Suppose you have let the returns on AAPL compound monthly over the one-year period (April 
 #1, 2022 – March 31, 2023). What is the annual log return for AAPL?
-
-
+new_df = pd.read_csv('AAPL.csv', parse_dates=['Date'], index_col='Date')
+new_df = df.sort_index()
+monthly_prices = new_df['Adj Close'].resample('M').last()
+print(monthly_returns)
 
 #1.2.3 Provide a table that includes the following (data: monthly frequency):
 

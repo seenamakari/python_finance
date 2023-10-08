@@ -35,6 +35,9 @@ print(data_2022_07_01)
 #1.1.2.a What is the 60-day simple return on Oct 18, 2022?
 target_date = pd.Timestamp('2022-10-18')
 date_60_days_before = target_date - pd.Timedelta(days=60)
+print(target_date)
+print(date_60_days_before)
+
 
 
 
