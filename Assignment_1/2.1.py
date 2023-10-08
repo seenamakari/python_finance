@@ -10,6 +10,11 @@ FSELX = df_FSELX['Adj Close']
 IVW = df_IVW['Adj Close']
 IVE = df_IVE['Adj Close']
 
+merged_df = pd.concat([FSELX, IVW, IVE], axis=1)
+merged_df.columns = ['FSELX', 'IVW', 'IVE']
+
+y = merged_df['FSELX']  # Dependent variable
+x = merged_df[['IVW', 'IVE']]  # Independent variables
 
 merged_df = pd.concat([FSELX, IVW, IVE], axis=1)
 merged_df.columns = ['FSELX', 'IVW', 'IVE']
@@ -20,7 +25,6 @@ regr.fit(x, y)
 
 print('Intercept: \n', regr.intercept_)
 print('Coefficients: \n', regr.coef_)
-
 
 # with statsmodels
 x = sm.add_constant(x) # adding a constant
