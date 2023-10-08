@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # Changed dataset into a DataFrame
 df = pd.read_csv('WE.csv')
@@ -33,13 +34,6 @@ data_2022_07_01 = df.loc['2022-07-01']
 print(data_2022_07_01)
 
 
-
-
-
-
-
-
-
 #1.1.2.a What is the 60-day simple return on Oct 18, 2022?
 # Setting the target date as a string
 target_date = '2022-10-18'
@@ -50,40 +44,42 @@ close_price_60_days_before = df.loc[date_60_days_before, 'Close']
 
 simple_60_return = (close_price_on_target_date/close_price_60_days_before) - 1
 print(simple_60_return)
-print("Answer above")
+
 
 
 #1.1.2.b How about 60-day gross return on Oct 18, 2022?
-
-
+gross_60_return = 1 + simple_60_return
+print(gross_60_return)
 
 
 #1.1.2.c What is the simple return for holding WE for the one year period (April 1, 2022 – March 31, 2023)?
+last_day = '2023-03-31'
+close_price_last_day = df.loc[last_day, 'Close']
+
+first_day = '2022-04-01'
+close_price_first_day = df.loc[first_day, 'Close']
+
+simple_yearly_return = (close_price_last_day/close_price_first_day) - 1
+print(simple_yearly_return)
+
 
 
 
 #1.1.3 Suppose you have let the returns on WE compound daily over the one-year period (April 1, 2022 – March 31, 2023). 
 #What is the annual log return for WE?
+log_yearly_return = np.log(close_price_last_day) - np.log(close_price_first_day)
+df['log_daily_return'] = df[np.log('Close')]  - df[np.log('Open')]
 
 
-
-
-#1.1.4.a - Table with daily simple returns
+#1.1.4.
+#a Table with daily simple returns
+#b - Table with daily log returns
+#c - Table with annualized daily simple returns
+#d - Table with annualized daily log returns 
+df['log_daily_return'] = df[np.log('Close')]  - df[np.log('Open')]
 print(df)
 
 
-
-#1.1.4.b - Table with daily log returns
-
-
-
-
-#1.1.4.c - Table with annualized daily simple returns
-
-
-
-
-#1.1.4.d - Table with annualized daily log returns 
 
 
 
