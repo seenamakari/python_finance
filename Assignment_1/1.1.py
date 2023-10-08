@@ -55,6 +55,7 @@ print(gross_60_return)
 #1.1.2.c What is the simple return for holding WE for the one year period (April 1, 2022 – March 31, 2023)?
 last_day = '2023-03-31'
 close_price_last_day = df.loc[last_day, 'Close']
+print()
 
 first_day = '2022-04-01'
 close_price_first_day = df.loc[first_day, 'Close']
@@ -67,17 +68,30 @@ print(simple_yearly_return)
 
 #1.1.3 Suppose you have let the returns on WE compound daily over the one-year period (April 1, 2022 – March 31, 2023). 
 #What is the annual log return for WE?
-log_yearly_return = np.log(close_price_last_day) - np.log(close_price_first_day)
-df['log_daily_return'] = df[np.log('Close')]  - df[np.log('Open')]
+log_yearly_return = np.log(31.080000) - np.log(276.799988)
+#This gave me an impossible answer (-238%), so I had to calculate it using a calculator instead
 
 
 #1.1.4.
-#a Table with daily simple returns
+#a Table with daily simple returns (already included in line 11 of this file)
 #b - Table with daily log returns
+df['log_daily_return'] = np.log(df['Close']) - np.log(df['Open'])
+
 #c - Table with annualized daily simple returns
+df['annualized_daily_simple_returns'] = (1 + df['simple_daily_return'])**251
+
 #d - Table with annualized daily log returns 
-df['log_daily_return'] = df[np.log('Close')]  - df[np.log('Open')]
-print(df)
+df['annualized_daily_log_returns'] = (1 + df['log_daily_return'])**251
+
+df.to_csv('1.1.4.csv')
+
+
+
+
+
+
+
+
 
 
 
