@@ -51,8 +51,5 @@ print(monthly_returns)
 #b. Monthly log returns
 
 
-#c. Bonus: annualized monthly simple returns (12 months)
 
-
-#d. Bonus: annualized monthly log returns (12 months)
 

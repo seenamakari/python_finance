@@ -32,13 +32,25 @@ print(data_2022_06_23)
 data_2022_07_01 = df.loc['2022-07-01']
 print(data_2022_07_01)
 
+
+
+
+
+
+
+
+
 #1.1.2.a What is the 60-day simple return on Oct 18, 2022?
-target_date = pd.Timestamp('2022-10-18')
-date_60_days_before = target_date - pd.Timedelta(days=60)
-print(target_date)
-print(date_60_days_before)
+# Setting the target date as a string
+target_date = '2022-10-18'
+close_price_on_target_date = df.loc[target_date, 'Close']
 
+date_60_days_before = '2022-08-19'
+close_price_60_days_before = df.loc[date_60_days_before, 'Close']
 
+simple_60_return = (close_price_on_target_date/close_price_60_days_before) - 1
+print(simple_60_return)
+print("Answer above")
 
 
 #1.1.2.b How about 60-day gross return on Oct 18, 2022?
