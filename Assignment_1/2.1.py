@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn import linear_model
 import statsmodels.api as sm
+import matplotlib.pyplot as plt
 
 df_FSELX = pd.read_csv('FSELX.csv')
 df_IVW = pd.read_csv('IVW.csv')
@@ -35,6 +36,15 @@ predictions = model.predict(x)
 print_model = model.summary()
 print(print_model)
 
+residuals = model.resid
+fitted_values = model.fittedvalues
+
+plt.scatter(fitted_values, residuals, alpha=0.6)
+plt.axhline(y=0, color='red', linestyle='--')
+plt.xlabel('Fitted values')
+plt.ylabel('Residuals')
+plt.title('Residuals vs. Fitted Values')
+plt.show()
 
 
 #2.1.1 Write the regression model (answer in the PDF)
@@ -51,8 +61,6 @@ print(print_model)
 #2.1.4 Interpret what the value for your intercept, and the other two coefficients mean in your 
 #model.
 
-
-
-#2.1.5 2.1.5 If in a given day the growth fund price was $95 and the value fund was $100, what would be 
+#2.1.5 If in a given day the growth fund price was $95 and the value fund was $100, what would be 
 #the price on the FSELX fund?
 
