@@ -1,10 +1,39 @@
 import pandas as pd
+from sklearn import linear_model
+import statsmodels.api as sm
 
-df = pd.read_csv('FSELX.csv')
-df = pd.read_csv('IVW.csv')
-df = pd.read_csv('IVE.csv')
+df_FSELX = pd.read_csv('FSELX.csv')
+df_IVW = pd.read_csv('IVW.csv')
+df_IVE = pd.read_csv('IVE.csv')
 
-#2.1.1 Write the regression model.
+FSELX = df_FSELX['Adj Close']
+IVW = df_IVW['Adj Close']
+IVE = df_IVE['Adj Close']
+
+
+merged_df = pd.concat([FSELX, IVW, IVE], axis=1)
+merged_df.columns = ['FSELX', 'IVW', 'IVE']
+
+# with sklearn
+regr = linear_model.LinearRegression()
+regr.fit(x, y)
+
+print('Intercept: \n', regr.intercept_)
+print('Coefficients: \n', regr.coef_)
+
+
+# with statsmodels
+x = sm.add_constant(x) # adding a constant
+ 
+model = sm.OLS(y, x).fit()
+predictions = model.predict(x) 
+ 
+print_model = model.summary()
+print(print_model)
+
+
+
+#2.1.1 Write the regression model (answer in the PDF)
 
 
 #2.1.2 Run the regression, report the estimated coefficients (parameters) for intercept (using alpha 

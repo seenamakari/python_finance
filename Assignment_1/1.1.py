@@ -7,7 +7,7 @@ df = pd.read_csv('WE.csv')
 df.set_index('Date', inplace=True)
 
 #Adding the column for simple daily returns
-df['simple_daily_return'] = (df['Close'] / df['Open'] - 1)
+df['simple_daily_return'] = (df['Close'] / df['Open']) - 1
 
 #Adding the column for gross daily returns
 df['gross_daily_return'] = 1 + df['simple_daily_return']
