@@ -20,14 +20,14 @@ x = merged_df[['IVW', 'IVE']]  # Independent variables
 merged_df = pd.concat([FSELX, IVW, IVE], axis=1)
 merged_df.columns = ['FSELX', 'IVW', 'IVE']
 
-# with sklearn
+
 regr = linear_model.LinearRegression()
 regr.fit(x, y)
 
 print('Intercept: \n', regr.intercept_)
 print('Coefficients: \n', regr.coef_)
 
-# with statsmodels
+
 x = sm.add_constant(x) # adding a constant
  
 model = sm.OLS(y, x).fit()
@@ -48,8 +48,8 @@ plt.show()
 
 
 #2.1.4 Interpret what the value for your intercept, and the other two coefficients mean in your 
-#model.
+#model (in PDF)
 
 #2.1.5 If in a given day the growth fund price was $95 and the value fund was $100, what would be 
-#the price on the FSELX fund?
+#the price on the FSELX fund (in PDF)
 

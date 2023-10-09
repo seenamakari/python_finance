@@ -69,7 +69,7 @@ print(simple_yearly_return)
 #1.1.3 Suppose you have let the returns on WE compound daily over the one-year period (April 1, 2022 – March 31, 2023). 
 #What is the annual log return for WE?
 log_yearly_return = np.log(31.080000) - np.log(276.799988)
-#This gave me an impossible answer (-238%), so I had to calculate it using a calculator instead
+#This gave me an impossible answer (-238%), so I had to calculate it using a calculator instead. Answer is in PDF
 
 
 #1.1.4.

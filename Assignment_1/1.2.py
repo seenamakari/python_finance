@@ -35,17 +35,17 @@ print(data_2022_08_05)
 
 #1.2.2 Log returns (data: monthly frequency)
 #a. Suppose you have let the returns on AAPL compound monthly over the one-year period (April 
-#1, 2022 – March 31, 2023). What is the annual log return for AAPL?
+#1, 2022 – March 31, 2023). What is the annual log return for AAPL? (in PDF)
 
 
 
 #1.2.3 Provide a table that includes the following (data: monthly frequency):
 
 
-#a. Monthly simple returns
+#a. Monthly simple returns (in PDF)
 
 
-#b. Monthly log returns
+#b. Monthly log returns (in PDF)
 
 
 
