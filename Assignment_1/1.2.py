@@ -37,39 +37,6 @@ print(data_2022_08_05)
 #a. Suppose you have let the returns on AAPL compound monthly over the one-year period (April 
 #1, 2022 – March 31, 2023). What is the annual log return for AAPL?
 
-April_2022_simple = 
-May_2022_simple =
-June_2022_simple =
-July_2022_simple =
-August_2022_simple =
-September_2022_simple =
-October_2022_simple = 
-November_2022_simple =
-December_2022_simple =
-January_2023_simple =
-February_2023_simple =
-March_2023_simple =
-
-
-
-April_2022_gross = 
-May_2022_gross =
-June_2022_gross =
-July_2022_gross =
-August_2022_gross =
-September_2022_gross =
-October_2022_gross = 
-November_2022_gross =
-December_2022_gross =
-January_2023_gross =
-February_2023_gross =
-March_2023_gross =
-
-
-
-
-
-
 
 
 #1.2.3 Provide a table that includes the following (data: monthly frequency):
